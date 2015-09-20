@@ -13,7 +13,7 @@ public class Render extends Graphics implements Runnable {
     private BufferedImage image = new BufferedImage(WIDTH, HEIGHT,
             BufferedImage.TYPE_INT_RGB);
     private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
-    
+
     public Render() {
         super(0, 0, "", true);
 
