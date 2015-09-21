@@ -1,4 +1,6 @@
-package com.daansander.engine.graphics;
+package com.daansander.engine.ui;
+
+import com.daansander.engine.graphics.Component;
 
 import java.util.HashSet;
 

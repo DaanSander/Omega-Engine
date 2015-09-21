@@ -1,4 +1,7 @@
-package com.daansander.engine.graphics;
+package com.daansander.engine.ui;
+
+import com.daansander.engine.graphics.Component;
+import com.daansander.engine.graphics.Screen;
 
 /**
  * Created by Daan on 21-9-2015.
