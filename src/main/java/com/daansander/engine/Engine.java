@@ -1,11 +1,11 @@
 package com.daansander.engine;
 
 /**
- * Created by Daan on 17-9-2015.
+ * Created by Daan on 25-9-2015.
  */
-public class Main {
+public abstract class Engine {
 
-    public static void main(String[] args) {
+    public Engine() {
         new Thread(new Render(false, "Test", 100)).start();
     }
 }
