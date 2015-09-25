@@ -1,11 +1,18 @@
 package com.daansander.engine;
 
+import com.daansander.engine.graphics.Render;
+import com.daansander.engine.graphics.RenderType;
+
 /**
- * Created by Daan on 25-9-2015.
+ * @author Daan Meijer
+ * @since 0.1
  */
-public abstract class Engine {
+public abstract class Engine extends Render {
 
     public Engine() {
-        new Thread(new Render(false, "Test", 100)).start();
+        super(false, "Test", 100, RenderType.MILISECOND, 2);
     }
+
+    @Override
+    public abstract void update();
 }

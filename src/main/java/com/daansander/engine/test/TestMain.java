@@ -14,4 +14,11 @@ public class TestMain extends Engine {
     public static void main(String[] args) {
         new TestMain();
     }
+
+    @Override
+    public void update() {
+        System.out.println(getFps());
+    }
+
+
 }

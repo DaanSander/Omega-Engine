@@ -1,0 +1,7 @@
+{
+  "commands": {
+    "build": {
+      "class": "BuildClass"
+    }
+  }
+}
