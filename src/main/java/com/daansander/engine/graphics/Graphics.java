@@ -9,6 +9,8 @@ import java.awt.image.BufferStrategy;
  */
 public abstract class Graphics extends Canvas {
 
+    //TODO: Include Components!
+
     protected final String NAME;
     protected final boolean locked;
     protected int WIDTH = 0;
@@ -51,7 +53,10 @@ public abstract class Graphics extends Canvas {
         frame.add(this, BorderLayout.CENTER);
         frame.pack();
 
-        frame.setResizable(false);
+        if (locked)
+            frame.setResizable(false);
+        else
+            frame.setResizable(true);
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 

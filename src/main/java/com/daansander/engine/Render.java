@@ -14,8 +14,8 @@ public class Render extends Graphics implements Runnable {
             BufferedImage.TYPE_INT_RGB);
     private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 
-    public Render() {
-        super(0, 0, "", true);
+    public Render(boolean r, String name, int width) {
+        super(width, 2, name, r);
 
     }
 

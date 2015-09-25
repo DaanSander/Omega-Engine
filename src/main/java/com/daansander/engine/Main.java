@@ -6,6 +6,6 @@ package com.daansander.engine;
 public class Main {
 
     public static void main(String[] args) {
-
+        new Thread(new Render(false, "Test", 100)).start();
     }
 }
