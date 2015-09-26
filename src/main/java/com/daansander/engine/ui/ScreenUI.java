@@ -9,6 +9,10 @@ import java.util.HashSet;
  */
 public abstract class ScreenUI {
 
+    /**
+     * Contains the components
+     */
+
     protected HashSet<Component> components = new HashSet<Component>();
 
 }

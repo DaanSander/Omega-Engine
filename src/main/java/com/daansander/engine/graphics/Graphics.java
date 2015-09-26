@@ -10,6 +10,7 @@ import java.awt.image.BufferStrategy;
 public abstract class Graphics extends Canvas {
 
     //TODO: Include Components!
+    //TODO: Add/Write Screen class!
 
     protected final String NAME;
     protected final boolean locked;
@@ -20,6 +21,7 @@ public abstract class Graphics extends Canvas {
     protected BufferStrategy bs;
 
     private JFrame frame;
+    private Screen screen;
 
     /**
      * @param width  of screen
@@ -33,6 +35,12 @@ public abstract class Graphics extends Canvas {
         this.locked = locked;
         this.HEIGHT = width / 12 * 9;
         this.SCALE = scale;
+
+        preInit();
+    }
+
+    private void preInit() {
+        screen = new Screen();
 
         init();
     }

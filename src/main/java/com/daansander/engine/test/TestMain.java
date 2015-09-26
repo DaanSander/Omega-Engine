@@ -16,9 +16,10 @@ public class TestMain extends Engine {
     }
 
     @Override
+    /**
+     * Called each frame
+     */
     public void update() {
-        System.out.println(getFps());
+        this.getGraphics().drawRect(10, 10, 100, 100);
     }
-
-
 }

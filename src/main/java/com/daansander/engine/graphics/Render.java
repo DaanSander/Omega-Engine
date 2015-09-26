@@ -8,6 +8,8 @@ import java.awt.image.DataBufferInt;
  */
 public abstract class Render extends Graphics implements Runnable {
 
+    //TODO: Add easy draw methods
+
     private final RenderType type;
     private final int delay;
     private BufferedImage image = new BufferedImage(WIDTH, HEIGHT,
@@ -125,6 +127,7 @@ public abstract class Render extends Graphics implements Runnable {
                 break;
         }
     }
+
 
     public abstract void update();
 
