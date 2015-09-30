@@ -40,7 +40,7 @@ public abstract class Graphics extends Canvas {
     }
 
     private void preInit() {
-        screen = new Screen();
+        screen = new Screen(WIDTH, HEIGHT);
 
         init();
     }
@@ -69,6 +69,7 @@ public abstract class Graphics extends Canvas {
         frame.setVisible(true);
 
         postInit();
+        tick();
     }
 
     private void postInit() {
@@ -122,5 +123,9 @@ public abstract class Graphics extends Canvas {
 
     public JFrame getFrame() {
         return frame;
+    }
+
+    protected Screen getScreen() {
+        return screen;
     }
 }

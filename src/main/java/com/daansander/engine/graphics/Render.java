@@ -12,9 +12,11 @@ public abstract class Render extends Graphics implements Runnable {
 
     private final RenderType type;
     private final int delay;
-    private BufferedImage image = new BufferedImage(WIDTH, HEIGHT,
-            BufferedImage.TYPE_INT_RGB);
+
+    private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
     private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
+
+
     private String fps = "";
     private volatile boolean running = false;
 
@@ -40,6 +42,16 @@ public abstract class Render extends Graphics implements Runnable {
     }
 
     public void render() {
+        getScreen().clear();
+        getScreen().render();
+
+        for (int i = 1; i < pixels.length; i++) {
+            pixels[i] = getScreen().pixels[i];
+        }
+        graphics.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+
+        graphics.dispose();
+        bs.show();
         update();
     }
 
