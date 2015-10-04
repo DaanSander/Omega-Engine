@@ -10,7 +10,7 @@ import com.daansander.engine.graphics.RenderType;
 public abstract class Engine extends Render {
 
     public Engine() {
-        super(false, "Test", 100, RenderType.MILISECOND, 2);
+        super(false, "Test", 300, RenderType.NANOSECOND, 2);
     }
 
     @Override

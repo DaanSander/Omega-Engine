@@ -4,11 +4,13 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 
 /**
- * Created by Daan on 17-9-2015.
+ * @author Daan Meijer
+ * @since 0.1
  */
 public abstract class Render extends Graphics implements Runnable {
 
     //TODO: Add easy draw methods
+    //TODO: Fix draw method
 
     private final RenderType type;
     private final int delay;
@@ -20,6 +22,15 @@ public abstract class Render extends Graphics implements Runnable {
     private String fps = "";
     private volatile boolean running = false;
 
+    /**
+     * @param r     can riseze screeb
+     * @param name  of screen
+     * @param width of screen
+     * @param type  rendertype
+     * @param delay of render
+     * @see RenderType
+     * @see Graphics
+     */
     public Render(boolean r, String name, int width, RenderType type, int delay) {
         super(width, 2, name, r);
         this.type = type;
@@ -43,16 +54,19 @@ public abstract class Render extends Graphics implements Runnable {
 
     public void render() {
         getScreen().clear();
+
+        update();
+
         getScreen().render();
 
-        for (int i = 1; i < pixels.length; i++) {
+        for (int i = 0; i < pixels.length; i++) {
             pixels[i] = getScreen().pixels[i];
         }
         graphics.drawImage(image, 0, 0, getWidth(), getHeight(), null);
 
         graphics.dispose();
         bs.show();
-        update();
+
     }
 
     public void tick() {

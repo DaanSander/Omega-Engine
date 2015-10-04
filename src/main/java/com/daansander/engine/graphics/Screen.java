@@ -1,11 +1,13 @@
 package com.daansander.engine.graphics;
 
 /**
- * Created by Daan on 21-9-2015.
+ * @author Daan Meijer
  */
 public class Screen {
 
     public int pixels[];
+    int xtime = 100, ytime = 50;
+    int counter = 0;
     private int width;
     private int height;
 
@@ -17,6 +19,21 @@ public class Screen {
     }
 
     public void render() {
+        counter++;
+        if (counter % 100 == 0) xtime++;
+        if (counter % 100 == 0) ytime++;
+        for (int y = 0; y < height; y++) {
+            if (ytime < 0 || ytime >= height) break;
+            for (int x = 0; x < width; x++) {
+                if (xtime < 0 || xtime >= width) break;
+                pixels[xtime + ytime * width] = 0xffffff;
+            }
+        }
+    }
+
+    public void render(int x, int y, int color) {
+        pixels[x + y * width] = color;
+
 
     }
 
