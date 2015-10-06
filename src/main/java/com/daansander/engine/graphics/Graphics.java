@@ -128,4 +128,9 @@ public abstract class Graphics extends Canvas {
     protected Screen getScreen() {
         return screen;
     }
+
+    protected void drawCircle(int r, int x, int y) {
+        getGraphics().setColor(Color.BLUE);
+        getGraphics().drawOval(x, y, r, r);
+    }
 }

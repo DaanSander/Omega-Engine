@@ -20,6 +20,6 @@ public class TestMain extends Engine {
      * Called each frame
      */
     public void update() {
-        this.getGraphics().drawRect(10, 10, 100, 100);
+        drawCircle(50, 50, 10);
     }
 }

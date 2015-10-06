@@ -2,39 +2,41 @@ package com.daansander.engine.math;
 
 import com.daansander.engine.Engine;
 
-import java.util.HashMap;
-
 /**
  * Created by Daan on 28-9-2015.
  */
 public class MathUtils extends Engine {
 
-    //TODO make vector 2D class
+    private int deg = 0;
 
     public MathUtils() {
         super();
+    }
+
+    public static Vector2D getPointCircle(int r, int xo, int yo, int deg) {
+        double c = Math.cos(deg);
+        double s = Math.sin(deg);
+
+        long x = Math.round(c);
+        long y = Math.round(s);
+
+        int fx = xo + r * (int) x;
+        int fy = yo + r * (int) y;
+
+        return new Vector2D(fx, fy);
     }
 
     public static void main(String[] args) {
         new MathUtils();
     }
 
-    public HashMap<Vector2D, Integer> drawCircle(int radius, Vector2D vector2D) {
-
-        return null;
-    }
-
     @Override
     public void update() {
-        /*boolean t = true;
-        if(t) {
-            drawCircle(2,new Vector2D(20, 20));
-            t = false;
-        }*/
-        draw();
-    }
-
-    public void draw() {
-        getGraphics();
+//        if(deg < 360) {
+//            Vector2D c = getPointCircle(5, 20, 20, deg);
+//            System.out.println("x " + c.getX() + ", y " + c.getY());
+//            getScreen().render(c.getX(), c.getY(), 0xffffff);
+//        }
+        deg += 90;
     }
 }

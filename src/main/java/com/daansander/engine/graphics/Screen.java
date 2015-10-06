@@ -34,7 +34,6 @@ public class Screen {
     public void render(int x, int y, int color) {
         pixels[x + y * width] = color;
 
-
     }
 
     public void clear() {

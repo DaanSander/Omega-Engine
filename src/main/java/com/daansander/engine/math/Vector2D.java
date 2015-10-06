@@ -5,19 +5,28 @@ package com.daansander.engine.math;
  */
 public class Vector2D {
 
-    private final int X;
-    private final int Y;
+    private int x;
+    private int y;
 
     public Vector2D(int x, int y) {
-        X = x;
-        Y = y;
+        this.x = x;
+        this.y = y;
     }
 
     public int getY() {
-        return Y;
+        return y;
     }
 
     public int getX() {
-        return X;
+        return x;
+    }
+
+    public Vector2D getLocation() {
+        return new Vector2D(x, y);
+    }
+
+    public void setLocation(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }
