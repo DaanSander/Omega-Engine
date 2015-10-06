@@ -18,7 +18,6 @@ public abstract class Render extends Graphics implements Runnable {
     private BufferedImage image = new BufferedImage(WIDTH, HEIGHT, BufferedImage.TYPE_INT_RGB);
     private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 
-
     private String fps = "";
     private volatile boolean running = false;
 
@@ -36,7 +35,7 @@ public abstract class Render extends Graphics implements Runnable {
         this.type = type;
         this.delay = delay;
 
-        start();
+        init();
     }
 
     public synchronized void start() {
@@ -45,11 +44,12 @@ public abstract class Render extends Graphics implements Runnable {
     }
 
     public synchronized void stop() {
-
+        running = false;
     }
 
     public void init() {
 
+        start();
     }
 
     public void render() {
@@ -72,7 +72,6 @@ public abstract class Render extends Graphics implements Runnable {
     public void tick() {
         super.tick();
     }
-
 
 
     public void run() {
