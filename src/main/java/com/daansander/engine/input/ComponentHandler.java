@@ -7,11 +7,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionListener;
 
 /**
- * Created by Daan on 21-9-2015.
+ * Created by Daan on 9-10-2015.
  */
-public abstract class InputHandler implements MouseInputListener, MouseMotionListener, KeyListener, Runnable {
+public abstract class ComponentHandler implements MouseInputListener, MouseMotionListener, KeyListener, Runnable {
 
-    public InputHandler() {
+    public ComponentHandler() {
 
     }
 
@@ -71,4 +71,8 @@ public abstract class InputHandler implements MouseInputListener, MouseMotionLis
 
     public abstract void mouseMove(MouseEvent e);
 
+    @Override
+    public void run() {
+
+    }
 }

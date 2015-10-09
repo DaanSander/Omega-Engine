@@ -11,8 +11,9 @@ import java.io.IOException;
 /**
  * Created by Daan on 17-9-2015.
  */
-public class Sprite implements Component {
+public class Sprite extends Component {
 
+    //TODO: Fix super
     public String path;
     public int width;
     public int height;
@@ -22,6 +23,7 @@ public class Sprite implements Component {
     public int[] pixels;
 
     public Sprite(String path, Vector2D vector) {
+        super(vector, 10, 10);
         this.vector = vector;
         this.path = path;
         BufferedImage image = null;
@@ -37,7 +39,6 @@ public class Sprite implements Component {
         pixels = image.getRGB(0, 0, width, height, null, 0, width);
     }
 
-    @Override
     public void render() {
         //TODO: Render sprite
     }
