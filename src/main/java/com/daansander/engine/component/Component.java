@@ -1,4 +1,4 @@
-package com.daansander.engine.graphics;
+package com.daansander.engine.component;
 
 /**
  * Created by Daan on 21-9-2015.

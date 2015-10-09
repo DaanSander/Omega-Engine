@@ -1,7 +1,5 @@
 package com.daansander.engine.input;
 
-import com.daansander.engine.graphics.Component;
-
 import javax.swing.event.MouseInputListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -11,7 +9,7 @@ import java.awt.event.MouseMotionListener;
 /**
  * Created by Daan on 21-9-2015.
  */
-public class InputHandler extends Component implements MouseInputListener, MouseMotionListener, KeyListener {
+public abstract class InputHandler implements MouseInputListener, MouseMotionListener, KeyListener, Runnable {
 
     public InputHandler() {
 
@@ -39,7 +37,7 @@ public class InputHandler extends Component implements MouseInputListener, Mouse
 
     @Override
     public void mousePressed(MouseEvent e) {
-
+        mouseDown(e);
     }
 
     @Override
@@ -66,4 +64,7 @@ public class InputHandler extends Component implements MouseInputListener, Mouse
     public void mouseMoved(MouseEvent e) {
 
     }
+
+    public abstract void mouseDown(MouseEvent mouseEvent);
+
 }

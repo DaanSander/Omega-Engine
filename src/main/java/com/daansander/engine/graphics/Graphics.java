@@ -9,8 +9,7 @@ import java.awt.image.BufferStrategy;
  */
 public abstract class Graphics extends Canvas {
 
-    //TODO: Include Components!
-    //TODO: Add/Write Screen class!
+    //TODO: Logic components
 
     protected final String NAME;
     protected final boolean locked;

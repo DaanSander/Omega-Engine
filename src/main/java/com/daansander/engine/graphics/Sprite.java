@@ -1,5 +1,6 @@
 package com.daansander.engine.graphics;
 
+import com.daansander.engine.component.Component;
 import com.daansander.engine.math.Vector2D;
 
 import javax.imageio.ImageIO;
